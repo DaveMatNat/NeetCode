@@ -6,26 +6,24 @@ Problem:
 
 Approach:
 
-Time Complexity: O(nlogn)
-Space Complexity: O(1)
+Time Complexity: O(n)
+Space Complexity: O(n)
 """
 
 class Solution:
     def longestConsecutive(self, nums: list) -> int:
-        if not nums:
-            return 0
-        nums.sort()
+        hashSet = set(nums)
         longest = 0
-        curr_long = 0
-        for i in range(len(nums)-1):
-            if nums[i+1] - nums[i] == 0:
-                continue
-            if nums[i+1] - nums[i] == 1:
-                curr_long += 1
-            else:
-                curr_long = 0
-            longest = max(curr_long,longest)
-        return longest + 1
+        for n in hashSet:
+            # is n is the beginning of a sequence
+            if (n-1) not in hashSet:
+                curr = 1
+                while (n+curr) in hashSet:
+                    curr += 1
+                longest = max(curr,longest)
+            # if is n is NOT the beginning of a sequence, then we will loop to the beginning at some point
+        return longest
+
 
 
 # Test cases
