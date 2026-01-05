@@ -13,7 +13,7 @@ Space Complexity: O(n)
 class Solution:
     def twoSum(self, nums, target: int) -> list:
         hmap = {} # val -> index
-        for i,val in enumerate(nums):
+        for i, val in enumerate(nums):
             diff = target - val
             if diff in hmap:
                 return [hmap[diff],i]
