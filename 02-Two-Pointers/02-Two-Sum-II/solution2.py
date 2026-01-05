@@ -13,14 +13,12 @@ Space Complexity: O(1)
 class Solution:
     def twoSum(self, numbers: list, target: int) -> list:
         l,r = 0,len(numbers)-1
-        while l < r:
-            sums = numbers[l] + numbers[r]
-            if sums == target:
-                return [l+1,r+1]
-            elif sums < target:
+        while numbers[l] + numbers[r] != target:
+            if numbers[l] + numbers[r] < target:
                 l += 1
             else:
                 r -= 1
+        return [l+1,r+1]    
 
 
 # Test cases
