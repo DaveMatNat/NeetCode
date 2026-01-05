@@ -6,14 +6,23 @@ Problem:
 
 Approach:
 
-Time Complexity: O(?)
-Space Complexity: O(?)
+Time Complexity: O(n)
+Space Complexity: O(1)
 """
 
 class Solution:
-    def solve(self):
-        # TODO: Implement solution
-        pass
+    def maxArea(self, heights: List[int]) -> int:
+        maxA = 0
+        l, r = 0, len(heights) - 1
+        while l < r:
+            currA = (r-l) * min(heights[l],heights[r]) # Area = width * height
+            maxA = max(currA,maxA)
+            if heights[l] > heights[r]:
+                r -= 1
+            else:
+                l += 1
+        return maxA
+
 
 
 # Test cases
