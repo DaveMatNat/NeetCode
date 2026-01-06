@@ -30,5 +30,7 @@ if __name__ == "__main__":
     solution = Solution()
     
     # Test case 1
+    print(solution.maxArea([1,7,2,5,4,7,3,6]))
+    print(solution.maxArea([2,2,2]))
     # TODO: Add test cases
     pass
