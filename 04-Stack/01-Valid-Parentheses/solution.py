@@ -6,20 +6,31 @@ Problem:
 
 Approach:
 
-Time Complexity: O(?)
-Space Complexity: O(?)
+Time Complexity: O(n)
+Space Complexity: O(n)
 """
 
 class Solution:
-    def solve(self):
-        # TODO: Implement solution
-        pass
+    def isValid(self, s: str) -> bool:
+        stack = []
+        pair = {')':'(', ']':'[','}':'{'}
+        for p in s:
+            if p in pair.values():
+                stack.append(p) # push
+            elif p in pair:
+                if stack and pair[p] == stack[-1]: # if p is close and compatible
+                    stack.pop()
+                else:
+                    return False
+        return len(stack) == 0
 
 
 # Test cases
 if __name__ == "__main__":
     solution = Solution()
     
-    # Test case 1
+    # Test cases
+    print(solution.isValid("([{}])"))
+    print(solution.isValid("([{])"))
     # TODO: Add test cases
     pass
