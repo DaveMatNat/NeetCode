@@ -64,5 +64,6 @@ if __name__ == "__main__":
     print(solution.minWindow("ADOBECODEBANC", "ABC"))
     print(solution.minWindow("a","a"))
     print(solution.minWindow("a","aa"))
+    print(solution.minWindow("BAVID","AD"))
     # TODO: Add test cases
     pass
