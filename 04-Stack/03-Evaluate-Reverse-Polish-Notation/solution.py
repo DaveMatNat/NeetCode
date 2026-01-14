@@ -40,7 +40,7 @@ class Solution:
                 stack.append(int(t))
         
         # Final result is the only element left in stack
-        return stack.pop()
+        return stack[0]
 
 
 # Test cases
